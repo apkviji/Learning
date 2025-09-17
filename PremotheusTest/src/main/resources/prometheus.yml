@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s # set scrape interval to 15s default is every 1 minute
+  evaluation_interval: 15s # set evaluation interval to 15s default is every 1 minute
+rule_files:
+scrape_configs:
+  #- job_name: 'prometheus'
+   # static_configs:
+    #  - targets: ['127.0.0.1:8180']
+  - job_name: 'spring-actuator'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['192.168.1.8:8180']
